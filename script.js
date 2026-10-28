@@ -64,26 +64,26 @@ document.getElementById("myDate").innerHTML = (now.getMonth()+1) + "/" + now.get
 startTime = new Date().getTime()
 let timerId = setInterval(function() {
     currentTime = new Date().getTime()
-    document.getElementById("myTimer").innerHTML = ((currentTime - startTime)/1000).toFixed(2)
+    document.getElementById("myTimer").innerHTML = ((currentTime - startTime)/1000).toFixed(3)
 }, 10)
 
 myBtn.addEventListener("click", stopTimer)
     let running = true
 
 function stopTimer() {
-    if (running = true) {
-        clearInterval(setInterval(timerId, 10))
+    if (running === true) {
+        clearInterval(timerId)
         myBtn.innerHTML = "Start"
         running = false
     }
-    if (running = false) {
-        startTime = newDate().getTime()
-        let timerId = setInterval(function() {
-            currentTime = new Date().getTime()
-            document.getElementById("myTimer").innerHTML = ((currentTime - startTime)/1000).toFixed(2)
-            }, 10) 
-        myBtn.innterHTML = "Stop"
+   else {
+        startTime = new Date().getTime()
+        myBtn.innerHTML = "Stop"
         running = true
+        timerId = setInterval(function() {
+            currentTime = new Date().getTime()
+            document.getElementById("myTimer").innerHTML = ((currentTime - startTime)/1000).toFixed(3)
+        }, 10)
     }
     }
 // ============================================
